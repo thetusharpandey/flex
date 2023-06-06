@@ -8,6 +8,10 @@
 <body>
 	<script type="text/javascript">
 		let videoNum = 1
+		function counterIncrement(){
+			videoNum+=18;
+			document.getElementById('pageCounter').innerHTML=videoNum;
+		}
 		function prevVid() {
 			videoNum-=1;
 			document.getElementById('pageCounter').innerHTML=videoNum;
@@ -69,6 +73,7 @@
 		<div style="display: inline-block; margin-left: 5px; margin-right: 5px; font-size: 20px;">|</div>
 		<div style="display: inline-block;">
 			<button id="pageCounter" style="font-size: 12px;">1</button>
+			<button id="counterIncrement" onclick="counterIncrement()">+18</button>
 		</div>
 	</div>
 	<div id="mainContent" style="min-height: 100% !important;">
