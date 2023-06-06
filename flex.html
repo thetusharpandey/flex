@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>ThenX</title>
+</head>
+<body>
+	<script type="text/javascript">
+		let videoNum = 1
+		function prevVid() {
+			videoNum-=1;
+			document.getElementById('pageCounter').innerHTML=videoNum;
+		}
+		function randVid() {
+			videoNum = Math.floor(Math.random()**1200);
+		}
+		function nextVid() {
+			videoNum+=1;
+			document.getElementById('pageCounter').innerHTML=videoNum;
+		}
+		function urlVid() {
+			addressUrl = "https://www.thenx.com/exercises/";
+			valueMain = addressUrl.concat(videoNum);
+			document.getElementById('frameMain').setAttribute("src", valueMain);
+		}
+	</script>
+	<style type="text/css">
+		.custom-btn {
+			margin: 10px;
+  width: 130px;
+  height: 40px;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
+}
+
+.btn-2 {
+  background: rgb(96,9,240);
+  background: linear-gradient(0deg, rgba(96,9,240,1) 0%, rgba(129,5,240,1) 100%);
+  border: none;
+  
+}
+.btn-2:before {
+  height: 0%;
+  width: 2px;
+}
+.btn-2:hover {
+  box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
+              -4px -4px 6px 0 rgba(116, 125, 136, .5), 
+    inset -4px -4px 6px 0 rgba(255,255,255,.2),
+    inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
+}
+
+	</style>
+	<div >
+		<div style="display: inline-block;">It's an investment</div>
+		<div style="display: inline-block; margin-left: 5px; margin-right: 5px; font-size: 20px;">|</div>
+		<div style="display: inline-block;">
+			<button id="pageCounter" style="font-size: 12px;">1</button>
+		</div>
+	</div>
+	<div id="mainContent" style="min-height: 100% !important;">
+	<div id="topDiv" style="display: flex; justify-content: space-between;" >
+		<button id="previous" class="custom-btn btn-2" onclick="prevVid()">-</button>
+		<button id="random" class="custom-btn btn-2" onclick="randVid()">∆</button>
+		<button id="next" class="custom-btn btn-2" onclick="nextVid()">+</button>
+	</div>
+	<div id="bottomDiv" style="min-height: 100% !important;">
+
+		<iframe id="frameMain" scrolling="no" onmouseover="urlVid()" style="width:100%; min-height: 810px"></iframe>
+	</div>
+	</div>
+</body>
+</html>
