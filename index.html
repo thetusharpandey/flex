@@ -23,6 +23,7 @@
 		function nextVid() {
 			videoNum+=1;
 			document.getElementById('pageCounter').innerHTML=videoNum;
+			navigator.clipboard.writeText(videoNum);
 		}
 		function urlVid() {
 			addressUrl = "https://www.thenx.com/exercises/";
@@ -85,7 +86,7 @@
 	</div>
 	<div id="bottomDiv" style="min-height: 100% !important;">
 
-		<iframe id="frameMain" scrolling="no" onmouseover="urlVid()" style="width:100%; min-height: 810px"></iframe>
+<!--		<iframe id="frameMain" scrolling="no" onmouseover="urlVid()" style="width:100%; min-height: 810px"></iframe>  -->
 	</div>
 	</div>
 </body>
